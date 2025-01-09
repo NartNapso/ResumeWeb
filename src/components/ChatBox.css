@@ -1,0 +1,70 @@
+/* About Me Section */
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  margin-top: 40px;
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.about-me.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* About Me Content Wrapper */
+.about-me-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Left Content: Text */
+.about-me-text {
+  flex: 1;
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-me-text h1 {
+  font-size: 3rem;
+  color: #00ff00;
+  margin-bottom: 15px;
+}
+
+.about-me-text p {
+  margin-bottom: 15px;
+}
+
+/* Right Content: GIF */
+.about-me-gif {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-me-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-me-gif {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+}

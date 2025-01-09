@@ -1,0 +1,157 @@
+/* AboutMe Wrapper */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  margin-top: 40px;
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  max-width: 1300px;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Glowing Divider */
+.about-me .divider {
+  margin: 0px 0px 20px 0px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #00ff00, #00ffff, #ff00ff);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: 3rem;
+  color: #00ff00;
+  font-family: 'Source Code Pro', monospace;
+}
+
+/* Hero Tagline */
+.hero-tagline {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #00ffff;
+  font-family: 'Source Code Pro', monospace;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-description .highlight {
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+/* Call-to-Action Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00ff00, #0078d4);
+  color: #121212;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0078d4, #003f8a);
+}
+
+.aboutMeContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.HeroImageContainer {
+  
+  padding: 50px; /* Adds padding between the border and the image */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow around the border */
+  background: linear-gradient(135deg, #00ff00, #0078d4); /* Gradient border effect */
+  display: inline-block; /* Ensures proper containment of the image */
+}
+
+.about-me-gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px; /* Set a maximum width */
+  width: 100%;
+  border-radius: 15px; /* Rounded corners for a cleaner look */
+  overflow: hidden; /* Ensure no content overflows */
+  border: 0.5px solid transparent; /* Start with a transparent border */
+  background: linear-gradient(135deg, #0078d4, #00ff00); /* Add a gradient border effect */
+  padding: 2px; /* Create the gradient effect inside the border */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+
+.about-me-gif img {
+  width: 100%;
+  max-height: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+/* Actual GIF inside the container */
+.hero-image img {
+  margin-top: 60px;
+  border-radius: 15px; /* Matches the image's border-radius */
+  min-width: 300px;
+  max-width: 80%;
+  padding: 3px;
+  height: auto;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow around the border */
+  background: linear-gradient(135deg, #00ff00, #0078d4); /* Gradient border effect */
+  display: inline-block; /* Ensures proper containment of the image */
+}
+
+.btn-secondary {
+  background: #121212;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #00ff00;
+  color: #121212;
+}
+
+/* Hero Image */
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}

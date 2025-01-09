@@ -1,0 +1,85 @@
+.contact-page {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  color: #e5e5e5;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.contact-page:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #00ff00, #0078d4);
+  z-index: -1;
+}
+
+.contact-page h1 {
+  font-size: 2.5rem;
+  color: #00ff00;
+  margin-bottom: 20px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.contact-page p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #e5e5e5;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  justify-content: flex-start; /* Ensures text starts after the icon */
+  gap: 15px; /* Space between the icon and the text */
+  font-size: 1.2rem;
+  background: #1e1e1e;
+  padding: 15px 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left; /* Ensures the text aligns properly */
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: #00ff00;
+}
+
+.contact-item p {
+  margin: 0;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #0078d4;
+}
+
+.contact-item a:hover {
+  color: #00ffff;
+  text-decoration: underline;
+}

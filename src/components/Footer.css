@@ -1,0 +1,26 @@
+.footer {
+  width: 100%;
+  background: #121212;
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 2px solid #333;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #00ffff;
+}
+
+.ascii-art {
+  margin-top: 20px;
+  font-family: 'Source Code Pro', monospace;
+  color: #00ff00;
+  font-size: 0.8rem;
+}

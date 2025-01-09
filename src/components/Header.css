@@ -1,0 +1,59 @@
+.header {
+  width: 100%;
+  height: 120px; /* Fixed height */
+  background: #1e1e1e;
+  color: #00ff00; /* Neon green */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 1.2rem;
+  border-bottom: 1px solid #333;
+  position: sticky; /* Sticks to the top of the viewport */
+  top: 0; /* Sticks to the very top */
+  z-index: 100; /* Ensure it stays above other elements */
+}
+
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #00ff00; /* Neon green */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00ffff; /* Cyan */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #00ff00;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+  color: #e5e5e5;
+}

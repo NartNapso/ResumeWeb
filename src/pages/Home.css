@@ -1,0 +1,9 @@
+.home main {
+  padding-top: 80px; /* Reserve space for the header */
+  padding: 20px; /* Additional padding for content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* Space between AboutMe and ChatBox */
+}
