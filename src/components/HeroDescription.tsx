@@ -6,13 +6,13 @@ interface HeroDescriptionProps {
 
 const HeroDescription: React.FC<HeroDescriptionProps> = ({ description }) => {
   return (
-    <>
+    <div className="descriptions-container">
       {description.map((line, index) => (
         <p key={index} className="hero-description">
           {line}
         </p>
       ))}
-    </>
+    </div>
   );
 };
 

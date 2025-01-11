@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import './AboutMe.css';
 import HeroTitle from './HeroTitle';
@@ -8,6 +8,23 @@ import HeroCTA from './HeroCTA';
 import profileGif from '../assets/IMG_5167.gif';
 
 const AboutMe: React.FC = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size for mobile
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+  
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -19,10 +36,17 @@ const AboutMe: React.FC = () => {
       className={`about-me hero-section ${inView ? 'visible' : ''}`}
     >
       <div className="about-me-content">
-        {/* Left Content: Text */}
+        {/* Left: Text Section */}
         <div className="about-me-text">
           <HeroTitle title="Hi, I'm Nart Napso" />
+          {isMobile ? 
+          <>
+          <HeroTagline tagline="Full Stack Developer" />
+          <HeroTagline tagline="Hybrid Athlete" />
+          </>
+          :
           <HeroTagline tagline="Full Stack Developer | Hybrid Athlete" />
+          }
           <HeroDescription
             description={[
               "I'm a passionate Software Engineer with extensive experience in full-stack development.",
@@ -35,7 +59,7 @@ const AboutMe: React.FC = () => {
           <HeroCTA />
         </div>
 
-        {/* Right Content: GIF */}
+        {/* Right: GIF Section */}
         <div className="about-me-gif">
           <img src={profileGif} alt="Nart Napso GIF" className="hero-image" />
         </div>

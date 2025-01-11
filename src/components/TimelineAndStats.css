@@ -7,21 +7,21 @@
     border-radius: 15px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
     color: #e5e5e5;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     font-size: 2rem;
     color: #00ff00;
     margin-bottom: 20px;
     text-align: center;
-  }
-  
-  /* Timeline */
-  .timeline {
+}
+
+/* Timeline */
+.timeline {
     margin-bottom: 40px;
-  }
-  
-  .timeline-item {
+}
+
+.timeline-item {
     background: #1e1e1e;
     margin-bottom: 20px;
     padding: 15px;
@@ -30,44 +30,44 @@
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.6s ease-out;
-  }
-  
-  .timeline-item.fade-in {
+}
+
+.timeline-item.fade-in {
     opacity: 1;
     transform: translateY(0);
-  }
-  
-  .timeline-item h3 {
+}
+
+.timeline-item h3 {
     font-size: 1.2rem;
     color: #00ff00;
     margin-bottom: 5px;
-  }
-  
-  .timeline-item h4 {
+}
+
+.timeline-item h4 {
     font-size: 1rem;
     margin-bottom: 10px;
     color: #00ffff;
-  }
-  
-  .timeline-item ul {
+}
+
+.timeline-item ul {
     list-style-type: disc;
     padding-left: 20px;
     text-align: left;
-  }
-  
-  .timeline-item li {
+}
+
+.timeline-item li {
     font-size: 1rem;
     margin-bottom: 5px;
-  }
-  
-  /* Stats */
-  .stats {
+}
+
+/* Stats */
+.stats {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-  }
-  
-  .stat-item {
+}
+
+.stat-item {
     background: #1e1e1e;
     margin: 10px;
     padding: 20px;
@@ -78,27 +78,77 @@
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.6s ease-out;
-  }
-  
-  .stat-item.fade-in {
+}
+
+.stat-item.fade-in {
     opacity: 1;
     transform: translateY(0);
-  }
-  
-  .stat-icon {
+}
+
+.stat-icon {
     font-size: 2rem;
     color: #00ff00;
     margin-bottom: 10px;
-  }
-  
-  .stat-item h3 {
+}
+
+.stat-item h3 {
     font-size: 1.5rem;
     color: #00ff00;
     margin-bottom: 5px;
-  }
-  
-  .stat-item p {
+}
+
+.stat-item p {
     font-size: 1rem;
     color: #e5e5e5;
-  }
-  
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .timeline-stats-section {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .timeline-item {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1rem;
+    }
+
+    .timeline-item h4 {
+        font-size: 0.9rem;
+    }
+
+    .timeline-item li {
+        font-size: 0.9rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-item {
+        width: 90%; /* Adjust stat-item width for smaller screens */
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .stat-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .stat-item p {
+        font-size: 0.9rem;
+    }
+}

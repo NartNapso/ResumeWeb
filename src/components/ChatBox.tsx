@@ -1,28 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import './ChatBox.css';
 
 const ChatBox: React.FC = () => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger animation only once
-    threshold: 0.1, // Activate when 10% of the component is visible
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
-  const [messages, setMessages] = React.useState<{ user: string; assistant: string[] }[]>([]);
-  const [input, setInput] = React.useState('');
+  const [messages, setMessages] = useState<{ user: string; assistant: string[] }[]>([]);
+  const [input, setInput] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
-  // Clears the input field
   const clearInput = () => {
     setInput('');
   };
 
-  // Adds a new user message to the chat state
   const addMessageToChat = (userMessage: string) => {
     const newMessage = { user: userMessage, assistant: [] };
     setMessages((prevMessages) => [...prevMessages, newMessage]);
   };
 
-  // Updates the assistant's response for the latest message
   const updateAssistantResponse = (assistantResponse: string) => {
     setMessages((prevMessages) =>
       prevMessages.map((msg, idx) =>
@@ -31,11 +29,12 @@ const ChatBox: React.FC = () => {
           : msg
       )
     );
+    setIsTyping(false);
   };
 
-  // Fetches the assistant's response from the server
   const fetchAssistantResponse = async (userMessage: string): Promise<string> => {
     try {
+      setIsTyping(true);
       const response = await fetch('http://localhost:8080/api/queryAI', {
         method: 'POST',
         headers: {
@@ -58,26 +57,23 @@ const ChatBox: React.FC = () => {
     }
   };
 
-  // Handles the sending process
   const handleSend = async () => {
     if (!input.trim()) return;
 
     const userMessage = input.trim();
-    clearInput(); // Clear input immediately
-    addMessageToChat(userMessage); // Add the user's message to the chat
+    clearInput();
+    addMessageToChat(userMessage);
 
-    const assistantResponse = await fetchAssistantResponse(userMessage); // Fetch response from the assistant
-    updateAssistantResponse(assistantResponse); // Update the assistant's response in the chat
+    const assistantResponse = await fetchAssistantResponse(userMessage);
+    updateAssistantResponse(assistantResponse);
   };
 
-  // Handles pressing Enter to send a message
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handleSend();
     }
   };
 
-  // Renders the chat messages
   const displayMessages = (): JSX.Element[] =>
     messages.map((msg, idx) => (
       <div key={idx} className="message">
@@ -92,7 +88,6 @@ const ChatBox: React.FC = () => {
       </div>
     ));
 
-  // Renders the input box and send button
   const chatInput = (): JSX.Element => (
     <div className="chat-input">
       <input
@@ -108,8 +103,19 @@ const ChatBox: React.FC = () => {
 
   return (
     <div ref={ref} className={`chat-container ${inView ? 'visible' : ''}`}>
-      
-      <div className="chat-messages">{displayMessages()}</div>
+      <div className="chat-messages">
+        {displayMessages()}
+        {isTyping && (
+          <div className="typing-message">
+            <strong className="assistant-label">Assistant:</strong>
+            <div className="typing-loader">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        )}
+      </div>
       {chatInput()}
     </div>
   );

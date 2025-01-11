@@ -24,3 +24,25 @@
   color: #00ff00;
   font-size: 0.8rem;
 }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.8rem; /* Slightly smaller font for compact screens */
+    gap: 10px; /* Adjust spacing between elements */
+    padding: 15px 10px; /* Compact padding for smaller screens */
+  }
+
+  .social-links {
+    gap: 5px; /* Smaller gap for compact layout */
+  }
+
+  .social-links a {
+    font-size: 0.9rem; /* Slightly smaller font size for links */
+  }
+
+  .ascii-art {
+    font-size: 0.7rem; /* Adjust size for better fit on mobile */
+  }
+}
